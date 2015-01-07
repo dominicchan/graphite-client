@@ -134,7 +134,7 @@ namespace Graphite.System
 
                 if (value.HasValue)
                 {
-                    channel.Report(config.Key, (long)value.Value);
+                    channel.Report(config.Key, value.Value);
                 }
             };
         }

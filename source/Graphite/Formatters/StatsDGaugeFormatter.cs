@@ -12,7 +12,7 @@ namespace Graphite.Formatters
                 && type.Equals("gauge", StringComparison.OrdinalIgnoreCase);
         }
 
-        public string Format(string key, long value)
+        public string Format(string key, float value)
         {
             return string.Format("{0}:{1}|g", key, value);
         }

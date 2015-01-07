@@ -13,7 +13,7 @@ namespace Graphite.Infrastructure
         /// <param name="key">The metric key.</param>
         /// <param name="value">The value.</param>
         /// <returns></returns>
-        bool Report(string key, long value);
+        bool Report(string key, float value);
 
         /// <summary>
         /// Reports the specifed value asynchron, returning a task.
@@ -21,6 +21,6 @@ namespace Graphite.Infrastructure
         /// <param name="key">The metric key.</param>
         /// <param name="value">The value.</param>
         /// <returns></returns>
-        Task<bool> ReportAsync(string key, long value);
+        Task<bool> ReportAsync(string key, float value);
     }
 }

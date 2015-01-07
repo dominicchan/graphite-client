@@ -50,28 +50,28 @@ namespace Graphite
             get { return Helpers.ConvertTicksToMs(this.watch.ElapsedTicks, this.watch.Frequency); }
         }
 
-        internal bool ReportCounter(string key, long value, float sampling = 1)
+        internal bool ReportCounter(string key, float value, float sampling = 1)
         {
             var channel = this.factory.CreateChannel("counter", "statsd", sampling);
 
             return channel.Report(key, value);
         }
 
-        internal bool ReportTiming(string key, long value)
+        internal bool ReportTiming(string key, float value)
         {
             var channel = this.factory.CreateChannel("timing", "statsd");
 
             return channel.Report(key, value);
         }
 
-        internal bool ReportGauge(string key, long value)
+        internal bool ReportGauge(string key, float value)
         {
             var channel = this.factory.CreateChannel("gauge", "statsd");
 
             return channel.Report(key, value);
         }
 
-        internal bool ReportRaw(string key, long value)
+        internal bool ReportRaw(string key, float value)
         {
             var channel = this.factory.CreateChannel("gauge", "graphite");
 
